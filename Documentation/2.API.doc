@@ -1,0 +1,68 @@
+Now we will connect to zookeeper through api
+
+Here We Will Use Python Programing, To interact with zookeeper we need a Python Library "Kazoo"
+To Install it in Command Line 
+•pip install Kazoo
+
+Run These Commands Line
+•pip install kazoo
+
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>pip install kazoo
+Collecting kazoo
+  Downloading kazoo-2.10.0-py2.py3-none-any.whl.metadata (47 kB)
+Downloading kazoo-2.10.0-py2.py3-none-any.whl (148 kB)
+Installing collected packages: kazoo
+Successfully installed kazoo-2.10.0
+
+•python
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>python
+Python 3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from kazoo.client import KazooClient
+
+to EXIT
+>>> exit()
+
+•nano ZookeeperAPI.py
+check No-3.doc file
+
+exit with Ctrl + S and then Ctrl + X
+
+Open that Previous zkCli teminal in Same path
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper\apache-zookeeper-3.9.2-bin\bin>zkCli
+Connecting to localhost:2181
+
+Now The Terminal
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>
+•python ZookeeperAPI.py
+
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>python ZookeeperAPI.py
+Node created successfully
+Data: sample data
+Version: 0
+Children of /samplepath: ['node']
+
+in zkCli Terminal
+•ls /
+[zk: localhost:2181(CONNECTED) 1] ls /
+[samplepath, zookeeper]
+
+•get /samplepath/node
+[zk: localhost:2181(CONNECTED) 8] get /samplepath/node
+sample data
+
+•ls /samplepath
+[zk: localhost:2181(CONNECTED) 9] ls /samplepath
+[node]
+
+In This Terminal
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>nano ZookeeperAPI2.py
+•nano ZookeeperAPI2.py
+copy paste doc file no 4
+exit with Ctrl + S and then Ctrl + X
+
+then
+D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper>python ZookeeperAPI2.py
+Created /training/hadoop with initial value
+Initial Version: 0, data: initial value
+Updated Version: 1, data: Updated Value

@@ -1,0 +1,61 @@
+Learn All Theory From
+Zookeeper _ _ Zero to Zookeeper in 2 hours _ Full Course (720p)
+
+Intall Zookeeper Through
+Run Standalone zookeeper server and client on windows
+
+Here We Will Connect To ZooKeeper Through Command Line
+
+https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4.tar.gz
+
+https://dlcdn.apache.org/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4.tar.gz
+
+https://zookeeper.apache.org/doc/r3.9.2/zookeeperStarted.html
+The above link Documentation is followed
+
+In apache/conf/zoo_sample.cfg copy this file in same directory with name zoo.cfg
+
+In terminal go to this directory 
+PS D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper\apache-zookeeper-3.8.4\bin> 
+
+To Change Path in terminal
+D:
+cd "HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper\apache-zookeeper-3.8.4\bin"
+
+In Power Shell
+Set-Location "D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper\apache-zookeeper-3.8.4\bin"
+OR
+cd "D:\HDD Data\A Disk\CODE\Visual Studio Code\GitHub\Zookeeper\apache-zookeeper-3.8.4\bin"
+
+•zkServer
+If Every thing is working fine you wil get 
+ZooKeeper audit is disabled.
+
+Now Open New Terminal in Same Path
+•zkCli
+
+If Everything is OK You wil get this
+WATCHER::
+WatchedEvent state:SyncConnected type:None path:null zxid: -1
+[zk: localhost:2181(CONNECTED) 0]
+ 
+
+Now Continue in same zkCli(Client) terminal
+•ls /
+
+[zk: localhost:2181(CONNECTED) 0] ls /
+[zookeeper]
+
+•create /zk_test my_data
+
+[zk: localhost:2181(CONNECTED) 1] create /zk_test my_data
+Created /zk_test
+
+let's try to delete the node by issuing:
+•delete /zk_test
+
+[zk: localhost:2181(CONNECTED) 5] delete /zk_test
+[zk: localhost:2181(CONNECTED) 6] ls /
+[zookeeper]
+
+

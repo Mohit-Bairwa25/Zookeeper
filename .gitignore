@@ -1,0 +1,26 @@
+# Ignore the Zookeeper tarball
+apache-zookeeper-3.9.2-bin
+
+# Ignore extracted Zookeeper directory
+apache-zookeeper-3.8.4/
+
+# Ignore build artifacts
+/build/
+/target/
+/out/
+
+# Ignore IDE specific files
+/.idea/
+/.vscode/
+/*.iml
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp

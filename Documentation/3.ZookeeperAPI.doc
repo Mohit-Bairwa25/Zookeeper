@@ -1,0 +1,42 @@
+GNU nano 8.1                                       ZookeeperAPI.py
+
+
+
+
+from kazoo.client import KazooClient
+from kazoo.exceptions import NodeExistsError
+
+def main():
+    # Connect to ZooKeeper
+    zk = KazooClient(hosts='127.0.0.1:2181')  # Replace with your ZooKeeper server address if different
+    zk.start()
+
+    try:
+        # Ensure a path exists
+        zk.ensure_path("/samplepath")
+
+        # Create a node with data
+        try:
+            zk.create("/samplepath/node", b"sample data")  # Note the b prefix for byte string
+            print("Node created successfully")
+        except NodeExistsError:
+            print("Node already exists")
+
+        # Get data from the node
+        data, stat = zk.get("/samplepath/node")
+        print(f"Data: {data.decode('utf-8')}")
+        print(f"Version: {stat.version}")
+
+        # List children
+        children = zk.get_children("/samplepath")
+        print(f"Children of /samplepath: {children}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+    finally:
+        # Always stop the client
+        zk.stop()
+
+if __name__ == "__main__":
+    main()
